@@ -57,10 +57,6 @@ def fetch_csv_once(Sales_url, Orders_url, Products_url, Customers_url):
 @app.before_request 
 def load_csv():
     print("Loading csv...")
-    if sales_df is not None and orders_df is not None and products_df is not None and customers_df is not None:
-        print("CSV files are already loaded.")
-    return
-    print("Loading CSV files...")
     fetch_csv_once(Sales_url, Orders_url, Products_url, Customers_url)
 
 def convert_to_serializable(obj):
@@ -70,7 +66,6 @@ def convert_to_serializable(obj):
 
 @app.route("/countries", methods=["GET"])
 def get_countries_list():
-    load_csv()
     countries = customers_df["Country"].unique()
     countries_list = countries.tolist()
     return jsonify({"countries": countries_list}) 
