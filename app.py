@@ -54,6 +54,7 @@ def fetch_csv_once(Sales_url, Orders_url, Products_url, Customers_url):
     order_sales_customers = pd.merge(order_sales, customers_df, on="Customer.ID", how="left")
     order_sales_customers_products = pd.merge(order_sales_customers, products_df, on="Product.ID", how="left")
 
+@app.before_request 
 def load_csv():
     print("Loading csv...")
     if sales_df is not None and orders_df is not None and products_df is not None and customers_df is not None:
@@ -66,12 +67,6 @@ def convert_to_serializable(obj):
     if isinstance(obj, np.ndarray):
         return obj.tolist()  
     raise TypeError(f"Object of type {type(obj).__name__} is not JSON serializable")
-
-@app.route("/", methods=["GET"])
-def home():
-    print("fetch csv")
-    app.logger.info("Home endpoint hit")
-    fetch_csv_once(Sales_url, Orders_url, Products_url, Customers_url)
 
 @app.route("/countries", methods=["GET"])
 def get_countries_list():
