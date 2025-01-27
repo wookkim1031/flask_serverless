@@ -21,10 +21,10 @@ with open("config.json", "r") as file:
 
 CORS(app)
 
-Sales_url = config["csv_files"]["sales"]  
-Orders_url = config["csv_files"]["orders"]  
-Products_url = config["csv_files"]["products"]  
-Customers_url = config["csv_files"]["customers"]  
+Sales_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/sales-85mWvldnLkYoqYNPhb8fe6rBpFhqgu.csv"
+Orders_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/orders-uE4hcFvq1xHnzg4tHb8b6qA6rrQ5Z8.csv"
+Products_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/products-xyggFC5HzlN9lB8XHpKEunzjI6y8oR.csv"
+Customers_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/customers-llBUF4es5FJ5E187KGKWhGBkFITevY.csv"
 
 sales_df = None
 orders_df = None
