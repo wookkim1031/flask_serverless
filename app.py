@@ -14,7 +14,6 @@ from sklearn.preprocessing import StandardScaler
 from mlxtend.frequent_patterns import apriori, association_rules
 from mlxtend.preprocessing import TransactionEncoder
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 with open("config.json", "r") as file:
     config = json.load(file)

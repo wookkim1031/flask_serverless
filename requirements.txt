@@ -1,9 +1,10 @@
 flask
 flask-cors
-pandas
-requests
+gunicorn
 numpy
+pandas
 plotly
+requests
+scikit-learn
 matplotlib
 mlxtend
-gunicorn
