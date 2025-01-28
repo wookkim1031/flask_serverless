@@ -20,7 +20,7 @@ with open("config.json", "r") as file:
 
 app = Flask(__name__)
 
-CORS(app, orgins=["https://intern-project-liart.vercel.app"])
+CORS(app, origins=["https://intern-project-liart.vercel.app"])
 
 Sales_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/sales-85mWvldnLkYoqYNPhb8fe6rBpFhqgu.csv"
 Orders_url = "https://ncetrlusncjytfjv.public.blob.vercel-storage.com/orders-uE4hcFvq1xHnzg4tHb8b6qA6rrQ5Z8.csv"
